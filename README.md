@@ -94,14 +94,14 @@ PercentFrameLayout
 参考[Github](https://github.com/JulienGenoud/android-percent-support-lib-sample)
 
 ### 字体型图标篇
-设计对于开发者来说通常都是头疼的事，如何让产品在实现功能的基础上更加漂亮，减少开发者在界面开发商的时间。使用字体型图标的好处还有不用考虑适配的问题。
+设计对于开发者来说通常都是头疼的事，如何让产品在实现功能的基础上更加漂亮，减少开发者在界面开发上的时间。使用字体型图标的好处还有不用考虑适配的问题。
 目前网上已经有了一些字体型图标（icon font）的开源库，如：
 * [Android-Bootstrap](https://github.com/Bearded-Hen/Android-Bootstrap)
 如果你熟悉Bootstrap并且你的产品设计就采用Bootstrap风格，可以使用它
 * [Iconify](https://github.com/JoanZapata/android-iconify)
 Iconify提供了大量的矢量图标供你选择，包括fontawesome、material、ionicons等等，找不到想要的图标也可以自定义扩展，扩展方法见github上的说明。
 * [Iconic](https://github.com/mikepenz/Android-Iconics)
-我用的是这个，它同样集成了大量图标，同时自定义扩展也非常方便。虽然字体型图标很方便，但是它不支持xml中selector的方式改变按下等效果。
+我用的是这个，它同样集成了大量图标，同时自定义扩展也非常方便，但需要UI设计师提供SVG格式的文件。虽然字体型图标很方便，但是它不支持xml中selector的方式改变按下等效果。
 如果非要实现按下等效果，估计只能实现它的onTouch事件了。在我看来，它适用于没有专业设计的情况下，能够保证页面展现的美感。在此不过多介绍。
 
 参考[useiconic](https://useiconic.com/)
@@ -117,7 +117,31 @@ Iconify提供了大量的矢量图标供你选择，包括fontawesome、material
 
 经过对比及我的项目经验，选择GreenDAO最好，不仅存取速度快，支持数据库加密，轻量级，支持缓存，等等。
 
+GreenDAO目前已经更新到3.2.0，相比于2.0版本有了很多的改进，不用新建Module等一系列操作，直接在build.gradle里配置并新建实体用添加注解的方式生成。
+
+具体步骤如下：
+
+1、在项目的build.gradle中添加`classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2'`到dependencies
+
+2、在app的build.gradle中添加
+```
+apply plugin: 'org.greenrobot.greendao'
+
+greendao {
+    schemaVersion 1//数据库版本号
+    daoPackage 'com.jingdong.sdk.generalandroidframework.greendao'//设置DaoMaster、DaoSession、Dao包名
+    targetGenDir 'src/main/java'//设置DaoMaster、DaoSession、Dao目录
+}
+
+compile 'org.greenrobot:greendao-generator:3.2.2'
+compile 'org.greenrobot:greendao:3.2.2'
+```
+
+3、最后就是用注解写实体类，然后Make Project。在此不多叙述。具体怎么用请看GreenDaoActivity或参考官方文档。
+
 参考[GreenDAO](https://github.com/greenrobot/greenDAO)
+
+参考[GreenDaoUpgradeHelper](https://github.com/yuweiguocn/GreenDaoUpgradeHelper)
 
 ### 图片加载篇
 
