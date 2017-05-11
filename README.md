@@ -171,6 +171,19 @@ Fresco是Facebook出品的新一代图片加载库，可说是功能最强大的
 
 参考[Fresco](https://github.com/facebook/fresco)
 
+### 网络请求篇
+目前流行的网络请求框架，如下：
+* Android Async HTTP
+Android异步HTTP库
+* AndroidAsync
+异步Socket，HTTP(客户端+服务器)，WebSocket，和socket.io库。基于NIO而不是线程。
+* OkHttp
+一个Http与Http/2的客户端
+* Retrofit
+类型安全的Http客户端
+* Volley
+Google推出的Android异步网络请求框架和图片加载框架
+
 
 
 

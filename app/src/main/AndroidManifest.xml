@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jingdong.sdk.generalandroidframework">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".BaseApplication"
         android:allowBackup="true"
@@ -19,6 +21,7 @@
         <activity android:name=".ui.PercentiveActivity" />
         <activity android:name=".ui.IconicActivity" />
         <activity android:name=".ui.GreenDaoActivity" />
+        <activity android:name=".ui.GlideActivity" />
     </application>
 
 </manifest>
