@@ -174,27 +174,30 @@ Fresco是Facebook出品的新一代图片加载库，可说是功能最强大的
 ### 网络请求篇
 目前流行的网络请求框架，如下：
 * Android Async HTTP
-Android异步HTTP库
-* AndroidAsync
-异步Socket，HTTP(客户端+服务器)，WebSocket，和socket.io库。基于NIO而不是线程。
+Android异步HTTP库，清晰的网络请求回调，使用ThreadPool限制并发资源使用情况。GET/POST基于参数构建（RequestParams），这一点和xutils很像。
+支持Multipart文件上传，大数据上传下载，内置响应解析成JSON（这部分后续会详细讲解）。持久化cookie存储，支持二进制文件的下载。
+但是它封装的是HttpClient，Android平台已经不推荐使用HttpClient了，所以已经不适用了。
 * OkHttp
-一个Http与Http/2的客户端
+OkHttp非常高效，基于HttpURLConnection，HttpClient（Android6.0移除了HttpClient）。支持SPDY、连接池、GZIP和HTTP缓存。
+OkHttp会自动处理常见的网络问题，像二次连接、SSL的握手问题。目前OkHttp已经更细到3.0了，与之前有很大区别。
 * Retrofit
-类型安全的Http客户端
+和Volley框架的请求方式很相似，底层网络请求采用OkHttp（效率高，android4.4底层采用OkHttp），采用注解方式来指定请求方式和url地址，减少了代码量。
+如果接口标准是RESTful API，并且是GSON格式的数据，那么Retrofit的契合度非常高。
 * Volley
-Google推出的Android异步网络请求框架和图片加载框架
+Volley是一个异步HTTP库，不支持同步。早期使用HttpClient，后来使用HttpURLConnection，是Google推出的网络请求框架，非常适合去进行数据量不大，但通信频繁的网络操作，
+而对于大数据量的网络操作，比如说下载文件等，Volley的表现就会*非常*糟糕。
+* xutils
+缓存已经网络请求数据，集成了网络、数据库、ViewInject等，但不维护了。
 
+可以说每个框架都有优缺点，用哪个都凭个人意愿。
 
+我推荐的框架是Retrofit + RxJava，它们的组合是近一两年来最流行的。
 
+介绍......
 
+参考[Retrofit](https://github.com/square/retrofit)
 
-
-
-
-
-
-
-
+参考[Rxjava](https://github.com/ReactiveX/RxJava)
 
 
 
