@@ -139,14 +139,37 @@ compile 'org.greenrobot:greendao:3.2.2'
 
 3、最后就是用注解写实体类，然后Make Project。在此不多叙述。具体怎么用请看GreenDaoActivity或参考官方文档。
 
+如果有将来可能替换DB层的需求，可以进一步封装
+
 参考[GreenDAO](https://github.com/greenrobot/greenDAO)
 
 参考[GreenDaoUpgradeHelper](https://github.com/yuweiguocn/GreenDaoUpgradeHelper)
 
 ### 图片加载篇
+图片加载的第三方框架可以说很成熟也很多，有：
 
+* UniversalImageLoader
+ImageLoader图片加载器采用单例模式，用于图片的加载和显示。MemoryCache默认使用LRU算法，当接近内存缓存的阈值时，put一个bitmap对象时，将近期最少使用的bitmap对象移除。
+UIL可以算是老牌最火的图片加载库，再也不用担心出现OOM和ListView图片错乱了，可惜的是该作者明确说明已经停止对该项目的维护，因此不推荐使用了。
+* Picasso
+Picasso是Square公司开源的，简单易用，一句话搞定图片加载。如：
+`Picasso.with(this).load("url").placeholder(R.mipmap.ic_default).into(imageView);`
+同样是单例模式，DownLoader是下载用的工具类，可以配合OKHttp使用。使用ExecutorService线程池。
+* Glide
+Glide是Google一位员工的大作，完全基于Picasso，但做了大量优化与改进。值得注意的是Glide支持加载Gif动态图，Picasso不支持。Glide是Google官方推荐的图片加载库。
+* Fresco
+Fresco是Facebook出品的新一代图片加载库，可说是功能最强大的。为避免OOM，Facebook另辟蹊径，将图片放到一个特别的内存区域Ashmem区，属于Native堆，图片不再占用App的内存。
+但Fresco有个很大的缺点就是包特别大，使用它APK包会增加2-3M。如果不在乎这个缺点，使用它是最合适的。
 
+当然除了这些还有其他的第三方库（如Volley），都是不错的选择。我的倾向是使用Glide。
 
+参考[UniversalImageLoader](https://github.com/nostra13/Android-Universal-Image-Loader)
+
+参考[Picasso](https://github.com/square/picasso)
+
+参考[Glide](https://github.com/bumptech/glide)
+
+参考[Fresco](https://github.com/facebook/fresco)
 
 
 

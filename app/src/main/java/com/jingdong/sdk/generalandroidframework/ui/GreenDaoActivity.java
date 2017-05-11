@@ -23,11 +23,15 @@ public class GreenDaoActivity extends BaseActivity {
         DaoSession daoSession = ((BaseApplication) getApplication()).getDaoSession();
         userDao = daoSession.getUserDao();
 
-        User user = new User();
-        user.setId(1L);
-        user.setName("test");
-        user.setAge(28);
-        userDao.insert(user);
+        try {
+            User user = new User();
+            user.setId(1L);
+            user.setName("test");
+            user.setAge(28);
+            userDao.insert(user);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         List<User> users = userDao.loadAll();
         for (User u : users) {

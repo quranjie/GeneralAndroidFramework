@@ -58,4 +58,6 @@ dependencies {
 
     // 使用数据库升级辅助GreenDaoUpgradeHelper时添加
     compile 'com.github.yuweiguocn:GreenDaoUpgradeHelper:v1.3.0'
+
+    compile 'com.github.bumptech.glide:glide:3.7.0'
 }
