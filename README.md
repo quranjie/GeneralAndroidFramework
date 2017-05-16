@@ -1,5 +1,9 @@
 ## 使用说明
-本项目旨在制作通用的Android开发框架，使各模块（如网络、数据库、图片加载）便于替换，对特殊问题进行详细说明。
+本项目旨在制作通用的Android开发框架，作为开发项目前的参考工具。
+
+我的格言：**对于新技术，永远不应该心生畏惧**。
+
+我一直试图在架构层面对项目做技术分析，不会事无巨细的介绍每一个技术点。
 
 ### 布局适配篇
 Google目前已经支持百分比布局了，下面详细介绍一下这个库（android-percent-support-lib-sample）：
@@ -193,11 +197,16 @@ Volley是一个异步HTTP库，不支持同步。早期使用HttpClient，后来
 
 我推荐的框架是Retrofit + RxJava，它们的组合是近一两年来最流行的。
 
-介绍......
+参考[Retrofit的详细用法](http://blog.csdn.net/duanyy1990/article/details/52139294)
 
 参考[Retrofit](https://github.com/square/retrofit)
 
 参考[Rxjava](https://github.com/ReactiveX/RxJava)
+
+整理了一些Android开发的工具包，参考[android-utils](https://github.com/jingle1267/android-utils)
+
+
+
 
 
 

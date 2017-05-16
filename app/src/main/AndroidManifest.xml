@@ -3,6 +3,8 @@
     package="com.jingdong.sdk.generalandroidframework">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
 
     <application
         android:name=".BaseApplication"
@@ -22,6 +24,7 @@
         <activity android:name=".ui.IconicActivity" />
         <activity android:name=".ui.GreenDaoActivity" />
         <activity android:name=".ui.GlideActivity" />
+        <activity android:name=".ui.RetrofitActivity" />
     </application>
 
 </manifest>
