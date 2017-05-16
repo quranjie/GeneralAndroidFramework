@@ -1,4 +1,4 @@
-package com.jingdong.sdk.generalandroidframework.utils;
+package com.jingdong.sdk.generalandroidframework.util;
 
 import android.annotation.TargetApi;
 import android.app.Activity;

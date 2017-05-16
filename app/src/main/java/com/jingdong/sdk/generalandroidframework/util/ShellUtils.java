@@ -1,4 +1,4 @@
-package com.jingdong.sdk.generalandroidframework.utils;
+package com.jingdong.sdk.generalandroidframework.util;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;

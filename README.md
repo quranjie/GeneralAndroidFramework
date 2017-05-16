@@ -5,6 +5,20 @@
 
 我一直试图在架构层面对项目做技术分析，不会事无巨细的介绍每一个技术点。
 
+Table of Contents
+-----------------
+   * [布局适配篇](#布局适配篇)
+   	    * [PercentRelativeLayout](#PercentRelativeLayout)
+   	    * [PercentLinearLayout](#PercentLinearLayout)
+   	    * [PercentFrameLayout](#PercentFrameLayout)
+   * [字体型图标篇](#字体型图标篇)
+   * [数据库篇](#数据库篇)
+   * [图片加载篇](#图片加载篇)
+   * [网络请求篇](#网络请求篇)
+   * [公用工具包](#公用工具包)
+   * [Android 编程规范](#android-编程规范)
+   * [自定义View 整理](#自定义view-整理)
+
 ### 布局适配篇
 Google目前已经支持百分比布局了，下面详细介绍一下这个库（android-percent-support-lib-sample）：
 这个库提供两种布局PercentRelativeLayout、PercentFrameLayout，分别继承自RelativeLayout和FrameLayout。
@@ -22,7 +36,7 @@ Google目前已经支持百分比布局了，下面详细介绍一下这个库�
 在开发过程中只要替换相应的Layout即可，但官方没有LinearLayout对应的PercentLinearLayout，见widget->PercentLinearLayout。
 使用方法如下：
 
-PercentRelativeLayout
+#### PercentRelativeLayout
 ```
 <android.support.percent.PercentRelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -60,7 +74,7 @@ PercentRelativeLayout
 </android.support.percent.PercentRelativeLayout>
 ```
 
-PercentLinearLayout
+#### PercentLinearLayout
 ```
 <com.jingdong.sdk.generalandroidframe.widget.PercentLinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -84,7 +98,7 @@ PercentLinearLayout
 </com.juliengenoud.percentsamples.PercentLinearLayout>
 ```
 
-PercentFrameLayout
+#### PercentFrameLayout
 ```
 <android.support.percent.PercentFrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -203,15 +217,15 @@ Volley是一个异步HTTP库，不支持同步。早期使用HttpClient，后来
 
 参考[Rxjava](https://github.com/ReactiveX/RxJava)
 
-整理了一些Android开发的工具包，参考[android-utils](https://github.com/jingle1267/android-utils)
+### 公用工具包
+整理了一些Android开发的工具包，详情请查看utils包。
 
+参考[android-utils](https://github.com/jingle1267/android-utils)
 
+### Android 编程规范
+自己整理了一些Android编程规范，参考<a href="./Specification.md">Specification.md</a>
 
-
-
-
-
-
+### 自定义View 整理
 
 
 

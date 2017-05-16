@@ -1,9 +1,9 @@
-package com.jingdong.sdk.generalandroidframework.utils;
+package com.jingdong.sdk.generalandroidframework.util;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static com.jingdong.sdk.generalandroidframework.utils.StringUtils.isEmpty;
+import static com.jingdong.sdk.generalandroidframework.util.StringUtils.isEmpty;
 
 /**
  * 数据校验

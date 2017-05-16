@@ -1,12 +1,8 @@
-package com.jingdong.sdk.generalandroidframework.utils;
+package com.jingdong.sdk.generalandroidframework.util;
 
-import android.Manifest;
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.os.Build;
 
 /**
  * Created by quzhiyong on 2017/5/16.

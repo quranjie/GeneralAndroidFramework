@@ -1,4 +1,4 @@
-package com.jingdong.sdk.generalandroidframework.utils;
+package com.jingdong.sdk.generalandroidframework.util;
 
 import android.app.Activity;
 import android.content.CursorLoader;
@@ -46,6 +46,16 @@ public class FileUtils {
     public static final String JPG_REG = "^.*\\.(gif|jpg|png)$";
 
     private static final String FILENAME_REGIX = "^[^\\/?\"*:<>\\]{1,255}$";
+
+    /**
+     * 根据文件路径获取文件
+     *
+     * @param filePath 文件路径
+     * @return 文件
+     */
+    public static File getFileByPath(String filePath) {
+        return isSpace(filePath) ? null : new File(filePath);
+    }
 
     /**
      * 删除文件或者空的文件夹
@@ -831,6 +841,56 @@ public class FileUtils {
     }
 
     /**
+     * 判断目录是否存在，不存在则判断是否创建成功
+     *
+     * @param dirPath 目录路径
+     * @return {@code true}: 存在或创建成功<br>{@code false}: 不存在或创建失败
+     */
+    public static boolean createOrExistsDir(String dirPath) {
+        return createOrExistsDir(getFileByPath(dirPath));
+    }
+
+    /**
+     * 判断目录是否存在，不存在则判断是否创建成功
+     *
+     * @param file 文件
+     * @return {@code true}: 存在或创建成功<br>{@code false}: 不存在或创建失败
+     */
+    public static boolean createOrExistsDir(File file) {
+        // 如果存在，是目录则返回true，是文件则返回false，不存在则返回是否创建成功
+        return file != null && (file.exists() ? file.isDirectory() : file.mkdirs());
+    }
+
+    /**
+     * 判断文件是否存在，不存在则判断是否创建成功
+     *
+     * @param filePath 文件路径
+     * @return {@code true}: 存在或创建成功<br>{@code false}: 不存在或创建失败
+     */
+    public static boolean createOrExistsFile(String filePath) {
+        return createOrExistsFile(getFileByPath(filePath));
+    }
+
+    /**
+     * 判断文件是否存在，不存在则判断是否创建成功
+     *
+     * @param file 文件
+     * @return {@code true}: 存在或创建成功<br>{@code false}: 不存在或创建失败
+     */
+    public static boolean createOrExistsFile(File file) {
+        if (file == null) return false;
+        // 如果存在，是文件则返回true，是目录则返回false
+        if (file.exists()) return file.isFile();
+        if (!createOrExistsDir(file.getParentFile())) return false;
+        try {
+            return file.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    /**
      * delete file or directory
      * <ul>
      * <li>if path is null or empty, return true</li>
@@ -917,5 +977,15 @@ public class FileUtils {
             cursor.moveToFirst();
             return new File(cursor.getString(column_index));
         }
+    }
+
+    private static boolean isSpace(String s) {
+        if (s == null) return true;
+        for (int i = 0, len = s.length(); i < len; ++i) {
+            if (!Character.isWhitespace(s.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
     }
 }

@@ -25,6 +25,7 @@
         <activity android:name=".ui.GreenDaoActivity" />
         <activity android:name=".ui.GlideActivity" />
         <activity android:name=".ui.RetrofitActivity" />
+        <activity android:name=".about.AboutActivity"></activity>
     </application>
 
 </manifest>
