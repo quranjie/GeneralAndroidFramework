@@ -1,4 +1,7 @@
-package com.jingdong.sdk.generalandroidframework.http;
+package com.jingdong.sdk.generalandroidframework.http.service;
+
+import com.jingdong.sdk.generalandroidframework.http.bean.GithubUserBean;
+import com.jingdong.sdk.generalandroidframework.http.bean.UserFollowerBean;
 
 import java.util.List;
 

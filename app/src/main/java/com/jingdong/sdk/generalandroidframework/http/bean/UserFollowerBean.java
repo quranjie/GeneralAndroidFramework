@@ -1,4 +1,4 @@
-package com.jingdong.sdk.generalandroidframework.http;
+package com.jingdong.sdk.generalandroidframework.http.bean;
 
 /**
  * Created by quzhiyong on 2017/5/13.

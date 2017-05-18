@@ -5,13 +5,9 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.jingdong.sdk.generalandroidframework.R;
-import com.jingdong.sdk.generalandroidframework.http.BlueService;
-import com.jingdong.sdk.generalandroidframework.http.GithubService;
-import com.jingdong.sdk.generalandroidframework.http.GithubUserBean;
-import com.jingdong.sdk.generalandroidframework.response.BannerResponse;
-import com.jingdong.sdk.generalandroidframework.response.BookSearchResponse;
+import com.jingdong.sdk.generalandroidframework.http.service.GithubService;
+import com.jingdong.sdk.generalandroidframework.http.bean.GithubUserBean;
 
-import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -27,28 +23,6 @@ public class RetrofitActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_retrofit);
-
-       /* Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://101.227.244.20/ysx/Rest/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        BlueService service = retrofit.create(BlueService.class);
-        Call<BannerResponse> call = service.banners();
-
-        call.enqueue(new Callback<BannerResponse>() {
-            @Override
-            public void onResponse(Call<BannerResponse> call, Response<BannerResponse> response) {
-                BannerResponse res = response.body();
-                int total = res.getResult().getTotal();
-                Log.e("qu", "result=" + total);
-//                asyncText.setText("异步请求结果: " + response.body().books.get(0).altTitle);
-            }
-            @Override
-            public void onFailure(Call<BannerResponse> call, Throwable t) {
-                Log.e("qu", "fail");
-            }
-        });*/
 
         LazyRetrofit();
     }

@@ -5,8 +5,8 @@
 
 我一直试图在架构层面对项目做技术分析，不会事无巨细的介绍每一个技术点。
 
-Table of Contents
------------------
+目录
+---
    * [布局适配篇](#布局适配篇)
    	    * [PercentRelativeLayout](#PercentRelativeLayout)
    	    * [PercentLinearLayout](#PercentLinearLayout)
@@ -18,6 +18,8 @@ Table of Contents
    * [公用工具包](#公用工具包)
    * [Android 编程规范](#android-编程规范)
    * [自定义View 整理](#自定义view-整理)
+   * [Tinker](#tinker)
+   * [Android动画](#android动画)
 
 ### 布局适配篇
 Google目前已经支持百分比布局了，下面详细介绍一下这个库（android-percent-support-lib-sample）：
@@ -203,7 +205,7 @@ OkHttp会自动处理常见的网络问题，像二次连接、SSL的握手问�
 如果接口标准是RESTful API，并且是GSON格式的数据，那么Retrofit的契合度非常高。
 * Volley
 Volley是一个异步HTTP库，不支持同步。早期使用HttpClient，后来使用HttpURLConnection，是Google推出的网络请求框架，非常适合去进行数据量不大，但通信频繁的网络操作，
-而对于大数据量的网络操作，比如说下载文件等，Volley的表现就会*非常*糟糕。
+而对于大数据量的网络操作，比如说下载文件等，Volley的表现就会**非常**糟糕。
 * xutils
 缓存已经网络请求数据，集成了网络、数据库、ViewInject等，但不维护了。
 
@@ -218,14 +220,48 @@ Volley是一个异步HTTP库，不支持同步。早期使用HttpClient，后来
 参考[Rxjava](https://github.com/ReactiveX/RxJava)
 
 ### 公用工具包
-整理了一些Android开发的工具包，详情请查看utils包。
+整理了一些Android开发的工具包，详情请查看util包。
 
 参考[android-utils](https://github.com/jingle1267/android-utils)
 
 ### Android 编程规范
-自己整理了一些Android编程规范，参考<a href="./Specification.md">Specification.md</a>
+
+自己整理了一些Android编程规范，前往<a href="./Specification.md">Specification.md</a>
 
 ### 自定义View 整理
 
+自定义View是开发人员必须会的，自己整理了一些自定义View，前往<a href="./CustomView.md">CustomView.md</a>
 
+### Tinker
 
+[Tinker](https://github.com/Tencent/tinker)是微信官方的Android热补丁解决方案，
+它支持动态下发代码、.so库以及资源库，让应用能够在不需要安装的情况下实现更新。
+
+Tinker的已知不足：
+
+> 1、Tinker不支持修改AndroidManifest.xml，Tinker不支持新增四大组件。
+
+> 2、由于Google Pay的开发者条款限制，不建议在GP渠道动态更新代码。
+
+> 3、在Android N上，补丁对应用启动时有轻微的影响。
+
+> 4、不支持部分三星android-21机型，加载补丁时会主动抛出"TinkerRuntimeException:checkDexInstall failed"异常。
+
+> 5、由于各个厂商加固实现并不一致，在1.7.6以后的版本，Tinker不在支持加固的动态更新。
+
+> 6、对于资源替换，不支持修改remoteView，例如transition动画，notification icon及桌面图标。
+
+上述的缺点主要体现在不支持部分机型，其他的缺点影响不太大或者可以绕过去。
+
+当下热更新、热修复是个很时髦的词，在手机端Tinker是目前最合适的解决方案。
+
+---------------------
+参考[Tinker实现原理](https://zhuanlan.zhihu.com/p/23270052)
+
+参考[wiki](https://github.com/Tencent/tinker/wiki)
+
+参考[简书](http://www.jianshu.com/p/d50817b6d622)
+
+### Android动画
+
+参考[AndroidCustomView](https://github.com/lygttpod/AndroidCustomView)

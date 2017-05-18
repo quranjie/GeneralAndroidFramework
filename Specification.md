@@ -652,7 +652,6 @@ for (int i = 0, int length = list.size(); i < length; i++) {
 [Android开发之版本统一规范]: http://www.jianshu.com/p/db6ef4cfa5d1
 [Android 流行框架查速表]: http://www.ctolib.com/cheatsheets-Android-ch.html
 [Android开发人员不得不收集的代码]: https://github.com/Blankj/AndroidUtilCode
-[Tinker]: https://github.com/Tencent/tinker
 [Android 开发最佳实践]: https://github.com/futurice/android-best-practices/blob/master/translations/Chinese/README.cn.md
 [Android 编码规范]: http://www.jianshu.com/p/0a984f999592
 [阿里巴巴Java开发手册]: https://102.alibaba.com/newsInfo.htm?newsId=6
