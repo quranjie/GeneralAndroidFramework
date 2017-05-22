@@ -17,7 +17,7 @@
    * [网络请求篇](#网络请求篇)
    * [公用工具包](#公用工具包)
    * [Android 编程规范](#android-编程规范)
-   * [自定义View 整理](#自定义view-整理)
+   * [自定义View整理](#自定义view整理)
    * [Tinker](#tinker)
    * [Android动画](#android动画)
 
@@ -228,7 +228,7 @@ Volley是一个异步HTTP库，不支持同步。早期使用HttpClient，后来
 
 自己整理了一些Android编程规范，前往<a href="./Specification.md">Specification.md</a>
 
-### 自定义View 整理
+### 自定义View整理
 
 自定义View是开发人员必须会的，自己整理了一些自定义View，前往<a href="./CustomView.md">CustomView.md</a>
 
@@ -237,19 +237,13 @@ Volley是一个异步HTTP库，不支持同步。早期使用HttpClient，后来
 [Tinker](https://github.com/Tencent/tinker)是微信官方的Android热补丁解决方案，
 它支持动态下发代码、.so库以及资源库，让应用能够在不需要安装的情况下实现更新。
 
-Tinker的已知不足：
-
-> 1、Tinker不支持修改AndroidManifest.xml，Tinker不支持新增四大组件。
-
-> 2、由于Google Pay的开发者条款限制，不建议在GP渠道动态更新代码。
-
-> 3、在Android N上，补丁对应用启动时有轻微的影响。
-
-> 4、不支持部分三星android-21机型，加载补丁时会主动抛出"TinkerRuntimeException:checkDexInstall failed"异常。
-
-> 5、由于各个厂商加固实现并不一致，在1.7.6以后的版本，Tinker不在支持加固的动态更新。
-
-> 6、对于资源替换，不支持修改remoteView，例如transition动画，notification icon及桌面图标。
+>Tinker的已知不足：
+1. Tinker不支持修改AndroidManifest.xml，Tinker不支持新增四大组件。
+2. 由于Google Pay的开发者条款限制，不建议在GP渠道动态更新代码。
+3. 在Android N上，补丁对应用启动时有轻微的影响。
+4. 不支持部分三星android-21机型，加载补丁时会主动抛出"TinkerRuntimeException:checkDexInstall failed"异常。
+5. 由于各个厂商加固实现并不一致，在1.7.6以后的版本，Tinker不在支持加固的动态更新。
+6. 对于资源替换，不支持修改remoteView，例如transition动画，notification icon及桌面图标。
 
 上述的缺点主要体现在不支持部分机型，其他的缺点影响不太大或者可以绕过去。
 
@@ -265,3 +259,8 @@ Tinker的已知不足：
 ### Android动画
 
 参考[AndroidCustomView](https://github.com/lygttpod/AndroidCustomView)
+
+参考[nineoldandroids](http://nineoldandroids.com/)
+
+属性动画参考
+[公共技术点之 Android 动画基础](http://a.codekk.com/detail/Android/lightSky/公共技术点之%20Android%20动画基础)
