@@ -15,6 +15,7 @@
    * [数据库篇](#数据库篇)
    * [图片加载篇](#图片加载篇)
    * [网络请求篇](#网络请求篇)
+   * [View注入框架](#view注入框架)
    * [公用工具包](#公用工具包)
    * [Android 编程规范](#android-编程规范)
    * [自定义View整理](#自定义view整理)
@@ -219,6 +220,12 @@ Volley是一个异步HTTP库，不支持同步。早期使用HttpClient，后来
 
 参考[Rxjava](https://github.com/ReactiveX/RxJava)
 
+参考[简书](http://gank.io/post/560e15be2dca930e00da1083)
+
+### View注入框架
+[ButterKnife](https://github.com/JakeWharton/butterknife)是一个专注于Android系统的View注入框架，
+可以减少大量的findViewById以及setOnClickListener代码。
+
 ### 公用工具包
 整理了一些Android开发的工具包，详情请查看util包。
 
@@ -264,3 +271,19 @@ Volley是一个异步HTTP库，不支持同步。早期使用HttpClient，后来
 
 属性动画参考
 [公共技术点之 Android 动画基础](http://a.codekk.com/detail/Android/lightSky/公共技术点之%20Android%20动画基础)
+
+数据库加密用[SQLCypher](https://github.com/sqlcipher/sqlcipher-android-tests)就可以了
+
+换皮肤/夜间模式用[MultipleTheme](https://github.com/dersoncheng/MultipleTheme)
+
+丰富一点的换肤功能可以参考这个
+[Android-Skin-Loader](https://github.com/fengjundev/Android-Skin-Loader)
+
+
+
+
+
+
+
+
+
